@@ -186,6 +186,113 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+    
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    
+    if (savedTheme === 'ocean') {
+        document.documentElement.setAttribute('data-theme', 'ocean');
+    }
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'ocean') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('portfolio-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'ocean');
+                localStorage.setItem('portfolio-theme', 'ocean');
+            }
+            if (themeIcon) {
+                // Creative icon animation
+                themeIcon.style.transition = 'none';
+                themeIcon.style.transform = 'scale(0.5) rotate(-180deg)';
+                setTimeout(() => {
+                    themeIcon.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    themeIcon.style.transform = 'scale(1) rotate(0deg)';
+                }, 50);
+            }
+        });
+    }
+    // Number Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // Lower is slower
+
+    const startCounters = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                if (target > 0) {
+                    updateCount();
+                }
+                observer.unobserve(counter);
+            }
+        });
+    };
+
+    const counterObserver = new IntersectionObserver(startCounters, {
+        root: null,
+        threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    // Coding Dashboard Tab Logic
+    const dashTabs = document.querySelectorAll('.dash-tab');
+    const dashPanels = document.querySelectorAll('.dash-panel');
+
+    if (dashTabs.length > 0 && dashPanels.length > 0) {
+        dashTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                dashTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Get target panel id
+                const targetId = tab.getAttribute('data-target');
+
+                // Switch panels
+                dashPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.id === targetId) {
+                        panel.classList.add('active');
+                        // Reset Animations
+                        const panelStats = panel.querySelectorAll('.counter');
+                        panelStats.forEach(stat => {
+                            stat.innerText = '0'; // reset text
+                            counterObserver.unobserve(stat); 
+                            setTimeout(() => {
+                                counterObserver.observe(stat);
+                            }, 50); // small delay to re-trigger observer
+                        });
+                        
+                        // the other CSS animations (bars, rings) re-trigger via the .active class application due to keyframes and display toggling
+                    }
+                });
+            });
+        });
+    }
 });
 
 // Tab Switching Logic
