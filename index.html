@@ -17,6 +17,13 @@
 </head>
 
 <body>
+    <!-- Animated Creative Background (Option 2) -->
+    <div class="ambient-bg">
+        <div class="ambient-stars"></div>
+        <div class="ambient-stars-2"></div>
+        <div class="ambient-stars-3"></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">VD.</div>
@@ -37,27 +44,75 @@
         <div class="hero-content">
             <h3 class="subtitle">Hello, World! I am</h3>
             <h1 class="title">Varun Dixit</h1>
-            <h2 class="role">Data Enthusiast & Analyst</h2>
-            <p class="description">Turning complex data into clear insights. Passionate about machine learning,
-                predictive modeling, and data visualization. Currently pursuing my B.Tech in CSE at LPU.</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/varun-dixit78" target="_blank" aria-label="LinkedIn"><i
+            <h2 class="role">
+                <span class="typing-text"></span><span class="typing-cursor"></span>
+            </h2>
+            <p class="description">Turning complex data into <span class="highlight">clear insights</span>. Passionate about <span class="highlight-cyan">machine learning</span>, <span class="highlight">predictive modeling</span>, and <span class="highlight-cyan">data visualization</span>. Currently pursuing my B.Tech in CSE at LPU.</p>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const roles = ["Aspiring Data Scientist", "Machine Learning Enthusiast", "Data Science Student", "Aspiring ML Engineer"];
+                    let roleIndex = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+                    const typingText = document.querySelector(".typing-text");
+
+                    function typeEffect() {
+                        const currentRole = roles[roleIndex];
+                        if (isDeleting) {
+                            typingText.textContent = currentRole.substring(0, charIndex - 1);
+                            charIndex--;
+                        } else {
+                            typingText.textContent = currentRole.substring(0, charIndex + 1);
+                            charIndex++;
+                        }
+
+                        let typeSpeed = isDeleting ? 40 : 100;
+
+                        if (!isDeleting && charIndex === currentRole.length) {
+                            typeSpeed = 2000;
+                            isDeleting = true;
+                        } else if (isDeleting && charIndex === 0) {
+                            isDeleting = false;
+                            roleIndex = (roleIndex + 1) % roles.length;
+                            typeSpeed = 500;
+                        }
+                        setTimeout(typeEffect, typeSpeed);
+                    }
+                    setTimeout(typeEffect, 1000);
+                });
+            </script>
+            <div class="social-links" style="margin-bottom: 2.5rem; gap: 1.2rem;">
+                <a href="https://linkedin.com/in/varun-dixit78" target="_blank" aria-label="LinkedIn" class="social-orb linkedin"><i
                         class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Varun7860dixit" target="_blank" aria-label="GitHub"><i
+                <a href="https://github.com/Varun7860dixit" target="_blank" aria-label="GitHub" class="social-orb github"><i
                         class="fab fa-github"></i></a>
-                <a href="mailto:varundixit7860@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:varundixit7860@gmail.com" aria-label="Email" class="social-orb email"><i class="fas fa-envelope"></i></a>
             </div>
-            <div style="margin-top: 1.5rem;">
-                <a href="#" class="btn-primary view-cv-btn"
-                    style="display: inline-flex; align-items: center; gap: 0.5rem;"><i class="fas fa-file-pdf"></i> View
-                    & Download CV</a>
+            <div>
+                <a href="#" class="magic-button view-cv-btn">
+                    <i class="fas fa-file-pdf pdf-icon"></i> 
+                    <span style="z-index: 2; position: relative;">View & Download CV</span>
+                </a>
             </div>
         </div>
         <div class="hero-visual">
-            <div class="blob shape1"></div>
-            <div class="blob shape2"></div>
-            <div class="profile-image-container glass">
-                <img src="profile.jpg" alt="Varun Dixit Profile Picture" class="profile-image">
+            <div class="hero-glow"></div>
+            <div class="profile-wrapper">
+                <div class="profile-image-container morph-blob">
+                    <img src="profile.jpg" alt="Varun Dixit Profile Picture" class="profile-image">
+                </div>
+                
+                <!-- Floating Tech Badges -->
+                <div class="floating-badge badge-1 glass">
+                    <i class="fab fa-python" style="color: #4B8BBE;"></i> Python
+                </div>
+                <div class="floating-badge badge-2 glass">
+                    <i class="fas fa-chart-pie" style="color: #FF9F43;"></i> Analytics
+                </div>
+                <div class="floating-badge badge-3 glass">
+                    <i class="fas fa-brain" style="color: #00f0ff;"></i> ML
+                </div>
             </div>
         </div>
     </header>
@@ -195,13 +250,13 @@
                     <div class="project-content">
                         <h3 class="project-title">Diabetes Prediction System</h3>
                         <span class="project-subtitle">Machine Learning | Apr 2025</span>
-                        
+
                         <ul class="project-desc-list">
-                            <li>Developed a supervised machine learning pipeline to predict diabetes using the Pima Indians dataset.</li>
-                            <li>Evaluated Random Forest, Logistic Regression, and SVM algorithms to determine the best model.</li>
-                            <li>Selected Random Forest as the most optimum model based on performance metrics.</li>
+                            <li>Built a supervised ML pipeline for diabetes prediction.</li>
+                            <li>Compared Random Forest, Logistic Regression, and SVM models.</li>
+                            <li>Identified Random Forest as the optimal predictive model.</li>
                         </ul>
-                        
+
                         <h4 class="tech-heading">Technologies Used:</h4>
                         <div class="tech-stack-pills">
                             <span>Python</span>
@@ -209,9 +264,10 @@
                             <span>Pandas</span>
                             <span>Matplotlib</span>
                         </div>
-                        
+
                         <div class="project-links">
-                            <a href="https://github.com/Varun7860dixit/Diabetes_Prediction_System_using_SupervisedMachineLearning" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Varun7860dixit/Diabetes_Prediction_System_using_SupervisedMachineLearning"
+                                target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -223,22 +279,23 @@
                     <div class="project-content">
                         <h3 class="project-title">Crime Insights Dashboard</h3>
                         <span class="project-subtitle">Data Analytics | Apr 2025</span>
-                        
+
                         <ul class="project-desc-list">
-                            <li>Developed an interactive dashboard in MS Excel to analyze historical crime trends in New York.</li>
-                            <li>Designed dynamic charts and KPI cards to summarize total crimes and peak trends.</li>
-                            <li>Enabled quick decision-making through intuitive data visualization and interactive filters.</li>
+                            <li>Built interactive Excel dashboard analyzing NY crime trends.</li>
+                            <li>Designed KPI cards summarizing total and peak crimes.</li>
+                            <li>Enabled fast decision-making via dynamic visual filters.</li>
                         </ul>
-                        
+
                         <h4 class="tech-heading">Technologies Used:</h4>
                         <div class="tech-stack-pills">
                             <span>MS Excel</span>
                             <span>Data Visualization</span>
                             <span>Data Analytics</span>
                         </div>
-                        
+
                         <div class="project-links">
-                            <a href="https://github.com/Varun7860dixit/Crime_Insights_Dashboard-using-Excel" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Varun7860dixit/Crime_Insights_Dashboard-using-Excel"
+                                target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -250,22 +307,23 @@
                     <div class="project-content">
                         <h3 class="project-title">Heart Disease Data Insights Dashboard</h3>
                         <span class="project-subtitle">Power BI & DAX | Nov 2025</span>
-                        
+
                         <ul class="project-desc-list">
-                            <li>Analyzed ~9,500 healthcare records to uncover significant cardiovascular risk patterns.</li>
-                            <li>Designed KPI dashboards and advanced DAX measures in Power BI for detailed tracking.</li>
-                            <li>Segmented high-risk patients across various lifestyle factors to provide actionable insights.</li>
+                            <li>Analyzed ~9,500 records to identify cardiovascular risks.</li>
+                            <li>Developed Power BI dashboards with advanced DAX measures.</li>
+                            <li>Segmented high-risk patients by key lifestyle factors.</li>
                         </ul>
-                        
+
                         <h4 class="tech-heading">Technologies Used:</h4>
                         <div class="tech-stack-pills">
                             <span>Power BI</span>
                             <span>DAX</span>
                             <span>Healthcare Analytics</span>
                         </div>
-                        
+
                         <div class="project-links">
-                            <a href="https://github.com/Varun7860dixit/Heart-Disease-Data-Insights-Dashboard" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Varun7860dixit/Heart-Disease-Data-Insights-Dashboard"
+                                target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -476,8 +534,8 @@
                 <div class="social-connect">
                     <h3>Connect With Me</h3>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/varun-dixit78" target="_blank" class="social-link linkedin"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/varun-dixit78" target="_blank"
+                            class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/Varun7860dixit" target="_blank" class="social-link github"><i
                                 class="fab fa-github"></i></a>
                         <a href="https://leetcode.com/u/Varun_Dixit/" target="_blank" class="social-link leetcode"
@@ -490,23 +548,26 @@
 
             <!-- Right Form -->
             <div class="contact-form-card glass">
-                <form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <form id="contactForm" action="https://formspree.io/f/mnjoqnqk" method="POST">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" class="form-input" placeholder="Enter subject" required>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter subject"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-input" placeholder="Enter your message" rows="3"
-                            required></textarea>
+                        <textarea id="message" name="message" class="form-input" placeholder="Enter your message"
+                            rows="3" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"
                             style="margin-left: 8px;"></i></button>
