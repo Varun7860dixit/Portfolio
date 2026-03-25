@@ -28,15 +28,23 @@
         <div class="nav-content">
             <div class="logo">VD.</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#coding-profiles" class="nav-link">Coding Profiles</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
             </ul>
-            <a href="#" class="btn-primary view-cv-btn"><i class="fas fa-file-pdf" style="margin-right: 5px;"></i> View
-                CV</a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <!-- Triggers the custom modal instead of direct download -->
+                <button id="cv-btn" class="btn header-cv-btn view-cv-btn">
+                    <i class="fas fa-file-pdf"></i> View & Download CV
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -47,7 +55,10 @@
             <h2 class="role">
                 <span class="typing-text"></span><span class="typing-cursor"></span>
             </h2>
-            <p class="description">Turning complex data into <span class="highlight">clear insights</span>. Passionate about <span class="highlight-cyan">machine learning</span>, <span class="highlight">predictive modeling</span>, and <span class="highlight-cyan">data visualization</span>. Currently pursuing my B.Tech in CSE at LPU.</p>
+            <p class="description">Turning complex data into <span class="highlight">clear insights</span>. Passionate
+                about <span class="highlight-cyan">machine learning</span>, <span class="highlight">predictive
+                    modeling</span>, and <span class="highlight-cyan">data visualization</span>. Currently pursuing my
+                B.Tech in CSE at LPU.</p>
 
             <script>
                 document.addEventListener("DOMContentLoaded", () => {
@@ -83,18 +94,14 @@
                 });
             </script>
             <div class="social-links" style="margin-bottom: 2.5rem; gap: 1.2rem;">
-                <a href="https://linkedin.com/in/varun-dixit78" target="_blank" aria-label="LinkedIn" class="social-orb linkedin"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Varun7860dixit" target="_blank" aria-label="GitHub" class="social-orb github"><i
-                        class="fab fa-github"></i></a>
-                <a href="mailto:varundixit7860@gmail.com" aria-label="Email" class="social-orb email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/varun-dixit78" target="_blank" aria-label="LinkedIn"
+                    class="social-orb linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Varun7860dixit" target="_blank" aria-label="GitHub"
+                    class="social-orb github"><i class="fab fa-github"></i></a>
+                <a href="mailto:varundixit7860@gmail.com" aria-label="Email" class="social-orb email"><i
+                        class="fas fa-envelope"></i></a>
             </div>
-            <div>
-                <a href="#" class="magic-button view-cv-btn">
-                    <i class="fas fa-file-pdf pdf-icon"></i> 
-                    <span style="z-index: 2; position: relative;">View & Download CV</span>
-                </a>
-            </div>
+
         </div>
         <div class="hero-visual">
             <div class="hero-glow"></div>
@@ -102,7 +109,7 @@
                 <div class="profile-image-container morph-blob">
                     <img src="profile.jpg" alt="Varun Dixit Profile Picture" class="profile-image">
                 </div>
-                
+
                 <!-- Floating Tech Badges -->
                 <div class="floating-badge badge-1 glass">
                     <i class="fab fa-python" style="color: #4B8BBE;"></i> Python
@@ -382,30 +389,320 @@
                         <h4>A.R.R.N. Adarsh Inter College | Agra, UP</h4>
                         <p class="highlight">Percentage: 89%</p>
                         <div class="timeline-details">
-                            <p>Graduated with high distinction, focusing on foundational sciences and mathematics.</p>
+                        </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section reveal" style="padding-bottom: 4rem;">
+            <h2 class="section-title">Milestones & <span>Achievements</span></h2>
+            <div class="achievement-showcase">
+                <!-- Achievement 1 -->
+                <div class="achievement-row" data-tilt>
+                    <div class="achievement-image-wrapper">
+                        <img src="award_ceremony.jpeg" alt="SolveXL Hackathon Award Ceremony">
+                    </div>
+                    <div class="achievement-details">
+                        <span class="achievement-tag">Feb 2025</span>
+                        <h3>1st Rank in SolveXL Hackathon</h3>
+                        <p>Secured the top position in the Excel-focused hackathon under CONCOCTION 2025, LPU's flagship
+                            intra-university tech fusion event.</p>
+                        <div class="achievement-icon-decorator">
+                            <div class="a-icon"><i class="fas fa-trophy" style="color: #ffbd2e;"></i></div>
+                            <span style="font-weight: 600; color: var(--text-primary); letter-spacing: 0.5px;">Champion
+                                Status</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Achievement 2 -->
+                <div class="achievement-row reverse" data-tilt>
+                    <div class="achievement-image-wrapper"
+                        style="background: rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                        <img src="hackerrank_badges.png" alt="HackerRank 5 Star Badges"
+                            style="object-fit: contain; max-height: 250px; filter: drop-shadow(0 0 15px rgba(255, 189, 46, 0.3));">
+                    </div>
+                    <div class="achievement-details">
+                        <span class="achievement-tag"
+                            style="background: rgba(255, 189, 46, 0.15); color: #ffbd2e; border-color: rgba(255, 189, 46, 0.3);">Continuous
+                            Path</span>
+                        <h3>5 Stars in HackerRank</h3>
+                        <p>Demonstrated advanced problem-solving skills and technical proficiency by earning 5 stars in
+                            Python, C++, Java, and SQL domains.</p>
+                        <div class="achievement-icon-decorator">
+                            <div class="a-icon"><i class="fas fa-star" style="color: #ffbd2e;"></i></div>
+                            <span style="font-weight: 600; color: var(--text-primary); letter-spacing: 0.5px;">Elite
+                                Coder</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Achievements Section -->
-        <section id="achievements" class="section reveal" style="padding-bottom: 2rem;">
-            <h2 class="section-title">Milestones & <span>Achievements</span></h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="milestone-card glass">
-                    <div class="milestone-icon"><i class="fas fa-medal"></i></div>
-                    <div class="milestone-info">
-                        <h4>1st Rank in SolveXL Hackathon</h4>
-                        <p>Excel-focused hackathon under CONCOCTION 2025, LPU's flagship tech fusion event.</p>
-                        <span class="date">Feb 2025</span>
-                    </div>
+        <!-- Coding Profiles Section -->
+        <section id="coding-profiles" class="section reveal" style="padding-top: 2rem;">
+            <h2 class="section-title">Coding <span>Profiles</span></h2>
+            <div class="coding-dashboard glass">
+                <!-- Sidebar Tabs -->
+                <div class="dash-sidebar">
+                    <button class="dash-tab active" data-target="dash-leetcode">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                            alt="LeetCode" style="width:20px; filter: invert(1);"> LeetCode
+                    </button>
+                    <button class="dash-tab" data-target="dash-gfg">
+                        <i class="fas fa-laptop-code" style="color: #2f8d46;"></i> GeeksForGeeks
+                    </button>
+                    <button class="dash-tab" data-target="dash-codeforces">
+                        <i class="fas fa-chart-bar" style="color: #318CE7;"></i> CodeForces
+                    </button>
+                    <button class="dash-tab" data-target="dash-hackerrank">
+                        <i class="fab fa-hackerrank" style="color: #2EC866;"></i> HackerRank
+                    </button>
+                    <button class="dash-tab" data-target="dash-codechef">
+                        <i class="fas fa-utensils" style="color: #fff;"></i> CodeChef
+                    </button>
                 </div>
-                <div class="milestone-card glass">
-                    <div class="milestone-icon"><i class="fas fa-star"></i></div>
-                    <div class="milestone-info">
-                        <h4>Achieved 5 Stars in HackerRank</h4>
-                        <p>Demonstrated proficiency in Python, C++ and SQL.</p>
+
+                <!-- Main Content Area -->
+                <div class="dash-content-area">
+                    <!-- LeetCode Panel -->
+                    <div id="dash-leetcode" class="dash-panel active leetcode-theme">
+                        <div class="panel-header">
+                            <div>
+                                <h3 class="panel-title">LeetCode Stats</h3>
+                                <a href="https://leetcode.com/u/Varun_Dixit/" target="_blank"
+                                    class="panel-link">@Varun_Dixit <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="panel-icon"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                                    alt="LeetCode"
+                                    style="width:40px; filter: invert(1) drop-shadow(0 0 8px rgba(255,161,22,0.8));">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="main-metric">
+                                <div><span class="metric-value counter" data-target="500">0</span><span
+                                        class="metric-plus">+</span></div>
+                                <span class="metric-label">Total Problems Solved</span>
+                            </div>
+                            <div class="sub-metrics-rings">
+                                <div class="ring-container" style="text-align: center;">
+                                    <svg viewBox="0 0 36 36" class="circular-chart easy">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" style="--target-offset: 37;"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="21.5" class="ring-text"
+                                            style="font-size: 9px; font-weight: bold; fill: #00b8a3;">Easy</text>
+                                    </svg>
+                                    <div
+                                        style="margin-top: 8px; font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem;">
+                                        <span class="counter" data-target="300">0</span><span
+                                            style="font-size:0.9rem; color:var(--text-secondary); font-weight:bold;">+</span>
+                                    </div>
+                                </div>
+                                <div class="ring-container" style="text-align: center;">
+                                    <svg viewBox="0 0 36 36" class="circular-chart med">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" style="--target-offset: 68;"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="21.5" class="ring-text"
+                                            style="font-size: 9px; font-weight: bold; fill: #ffc01e;">Med</text>
+                                    </svg>
+                                    <div
+                                        style="margin-top: 8px; font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem;">
+                                        <span class="counter" data-target="150">0</span><span
+                                            style="font-size:0.9rem; color:var(--text-secondary); font-weight:bold;">+</span>
+                                    </div>
+                                </div>
+                                <div class="ring-container" style="text-align: center;">
+                                    <svg viewBox="0 0 36 36" class="circular-chart hard">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" style="--target-offset: 95;"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="21.5" class="ring-text"
+                                            style="font-size: 9px; font-weight: bold; fill: #ff375f;">Hard</text>
+                                    </svg>
+                                    <div
+                                        style="margin-top: 8px; font-weight: 600; font-family: var(--font-heading); font-size: 1.1rem;">
+                                        <span class="counter" data-target="25">0</span><span
+                                            style="font-size:0.9rem; color:var(--text-secondary); font-weight:bold;">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GeeksForGeeks Panel -->
+                    <div id="dash-gfg" class="dash-panel gfg-theme">
+                        <div class="panel-header">
+                            <div>
+                                <h3 class="panel-title">GeeksForGeeks Profile</h3>
+                                <a href="https://www.geeksforgeeks.org/profile/varundix8uzk" target="_blank"
+                                    class="panel-link">@varundix8uzk <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="panel-icon"><i class="fas fa-laptop-code"
+                                    style="color: #2f8d46; filter: drop-shadow(0 0 8px rgba(47,141,70,0.8));"></i></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="main-metric">
+                                <div><span class="metric-value counter" data-target="240">0</span><span
+                                        class="metric-plus">+</span></div>
+                                <span class="metric-label">Problems Solved</span>
+                            </div>
+                            <div class="sub-metrics-bars">
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Coding Score</span>
+                                        <div><span class="counter" data-target="650">0</span>+</div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 65%; background: #2f8d46;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Institute Rank</span>
+                                        <div><span style="font-size:0.9rem; color:var(--text-secondary);">Top
+                                            </span><span class="counter" data-target="2500">0</span></div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 40%; background: #2f8d46;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CodeForces Panel -->
+                    <div id="dash-codeforces" class="dash-panel codeforces-theme">
+                        <div class="panel-header">
+                            <div>
+                                <h3 class="panel-title">CodeForces Stats</h3>
+                                <a href="https://codeforces.com/profile/Varun_dixit7860" target="_blank"
+                                    class="panel-link">@Varun_dixit7860 <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="panel-icon"><i class="fas fa-chart-bar"
+                                    style="color: #318CE7; filter: drop-shadow(0 0 8px rgba(49,140,231,0.8));"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="main-metric">
+                                <div><span class="metric-value counter" data-target="756">0</span></div>
+                                <span class="metric-label">Contest Rating (Newbie)</span>
+                            </div>
+                            <div class="sub-metrics-bars">
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Total Problems Solved</span>
+                                        <div><span class="counter" data-target="100">0</span>+</div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 50%; background: #318CE7;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Max Streak (Days)</span>
+                                        <div><span class="counter" data-target="50">0</span>+</div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 80%; background: #318CE7;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HackerRank Panel -->
+                    <div id="dash-hackerrank" class="dash-panel hackerrank-theme">
+                        <div class="panel-header">
+                            <div>
+                                <h3 class="panel-title">HackerRank Profile</h3>
+                                <a href="https://www.hackerrank.com/profile/varundixit7860" target="_blank"
+                                    class="panel-link">@varundixit7860 <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="panel-icon"><i class="fab fa-hackerrank"
+                                    style="color: #2EC866; filter: drop-shadow(0 0 8px rgba(46,200,102,0.8));"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="main-metric">
+                                <span class="metric-value counter" data-target="5">0</span><span class="metric-plus">
+                                    Stars</span>
+                                <span class="metric-label">Maximum Achieved Badge</span>
+                            </div>
+                            <div class="badges-row">
+                                <div class="badge-item">
+                                    <i class="fas fa-star"
+                                        style="color: #ffbd2e; text-shadow: 0 0 15px rgba(255,189,46,0.8);"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-star"
+                                        style="color: #ffbd2e; text-shadow: 0 0 15px rgba(255,189,46,0.8);"></i>
+                                    <span>C++</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-star"
+                                        style="color: #ffbd2e; text-shadow: 0 0 15px rgba(255,189,46,0.8);"></i>
+                                    <span>SQL</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-star"
+                                        style="color: #ffbd2e; text-shadow: 0 0 15px rgba(255,189,46,0.8);"></i>
+                                    <span>Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CodeChef Panel -->
+                    <div id="dash-codechef" class="dash-panel codechef-theme">
+                        <div class="panel-header">
+                            <div>
+                                <h3 class="panel-title">CodeChef Stats</h3>
+                                <a href="https://www.codechef.com/users/varundixit7860" target="_blank"
+                                    class="panel-link">@varundixit7860 <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="panel-icon"><i class="fas fa-utensils"
+                                    style="color: #fff; filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));"></i></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="main-metric">
+                                <div><span class="metric-value counter" data-target="1012">0</span><span
+                                        class="metric-plus" style="font-size: 1.5rem;"> (1&#9733;)</span></div>
+                                <span class="metric-label">Contest Rating</span>
+                            </div>
+                            <div class="sub-metrics-bars">
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Problem Solver (Silver Badge)</span>
+                                        <div><span class="counter" data-target="250">0</span><span
+                                                style="font-size:0.8rem; color:var(--text-secondary);">+ Solved</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 52%; background: #ffffff;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Code Enthusiast (Bronze Badge)</span>
+                                        <div><span class="counter" data-target="10">0</span><span
+                                                style="font-size:0.8rem; color:var(--text-secondary);">+
+                                                Solutions</span></div>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" style="width: 28%; background: #ffffff;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-stat">
+                                    <div class="bar-info"><span>Daily Streak</span><span
+                                            style="color: gold; font-weight: bold;"><i class="fas fa-medal"></i> Gold
+                                            Badge</span></div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill"
+                                            style="width: 100%; background: gold; box-shadow: 0 0 10px rgba(255,215,0,0.5);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
